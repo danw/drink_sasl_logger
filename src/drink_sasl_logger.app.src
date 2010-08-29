@@ -1,0 +1,9 @@
+{application, drink_sasl_logger,
+ [{description, "Drink SASL Logger"},
+  {vsn, "1.0"},
+  {modules, [drink_sasl_logger_app]},
+  {registered,[drink_sasl_logger]},
+  {applications, [kernel, stdlib, sasl, dw_events]},
+  {mod, {drink_sasl_logger_app, []}},
+  {start_phases, []}
+]}.
