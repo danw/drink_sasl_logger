@@ -50,8 +50,8 @@ handle_cast (_Request, State) -> {noreply, State}.
 
 handle_call (_Request, _From, State) -> {noreply, State}.
 
-handle_info ({dw_event, drink, Event}, State) ->
-    error_logger:error_msg("drink: ~p~n", [Event]),
+handle_info ({dw_event, drink, Pid, Event}, State) ->
+    error_logger:error_msg("drink(~p): ~p~n", [Pid, Event]),
     {noreply, State};
 handle_info (_Info, State) -> {noreply, State}.
 
